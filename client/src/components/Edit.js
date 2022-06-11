@@ -62,10 +62,12 @@ export default function Edit() {
       headers: {
         "Content-Type": "application/json",
       },
-    }).catch((error) => {
-      window.alert(error);
-      return;
-    });
+    })
+      .then((res) => console.log(res))
+      .catch((error) => {
+        window.alert(error);
+        return;
+      });
 
     //! This isn't working - the fetch request gets stuck at 'pending' in devtools - for debugging
     navigate("/");
